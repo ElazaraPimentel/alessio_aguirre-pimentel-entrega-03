@@ -1,0 +1,150 @@
+/* style.css */
+
+/* Telefono y todo */
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
+html {
+     font-size: 18px;
+}
+
+body {
+     font-family: 'Kode Mono', monospace;
+}
+
+h1 {
+     font-weight: bold;
+     font-size: 1.5rem;
+     color: #0C282B;
+}
+
+h2 {
+     font-size: 1.3rem;
+     font-style: italic;
+     color: #9E5327;
+     margin-bottom: 20px;
+     /* Adds space below h2, effectively adding space above h3 */
+}
+
+h3 {
+     font-size: 1.2rem;
+     color: #505050;
+     /* Darker shade for better readability */
+     text-shadow: 1px 1px 2px #000;
+     /* Simple shadow for depth */
+     margin-top: 20px;
+     /* Adds space above h3 */
+}
+
+p {
+     font-size: 0.95rem;
+}
+
+nav {
+     background-color: #0C282B;
+}
+
+nav ul {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     list-style-type: none;
+     padding: 3px;
+     margin: 0;
+}
+
+nav li {
+     margin-right: 5px;
+     padding: 3px;
+}
+
+nav a {
+     text-decoration: none;
+     color: #FFFFFF;
+     padding: 10px 15px;
+     display: block;
+}
+
+.centered-logo-text {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     text-align: center;
+}
+
+footer {
+     text-align: center;
+     color: #DE681D;
+}
+
+.service-container {
+     display: flex;
+     flex-direction: column;
+     gap: 20px;
+}
+
+.product img:hover {
+     filter: brightness(80%);
+}
+
+/* Tablet */
+@media screen and (min-width: 600px) {
+     .service-container {
+          flex-direction: row;
+     }
+}
+
+/* Compu */
+@media screen and (min-width: 1024px) {
+     .service-container {
+          flex-direction: row;
+     }
+
+     .service-container>div {
+          flex: 1;
+     }
+}
+
+.product {
+     border: 1px solid lightgray;
+     padding: 1rem;
+     text-align: center;
+}
+
+.product img {
+     width: 100%;
+     object-fit: cover;
+}
+
+.products-container {
+     display: grid;
+     margin: 1rem;
+     grid-template-columns: 1fr;
+     gap: 2rem;
+}
+
+@media screen and (min-width: 600px) {
+     .products-container {
+          grid-template-columns: repeat(2, 1fr);
+     }
+
+     .products-container .img-siete {
+          display: block;
+          grid-column: span 2;
+     }
+}
+
+@media screen and (min-width: 1024px) {
+     .products-container {
+          grid-template-columns: repeat(2, 1fr);
+     }
+
+     .products-container .img-siete {
+          display: block;
+          grid-column: span 2;
+     }
+}
