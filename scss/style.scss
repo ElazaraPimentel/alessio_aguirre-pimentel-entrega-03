@@ -1,0 +1,151 @@
+/* style.scss */
+
+// Variables
+$base-font-size: 18px; // Tamaño de tipografía base
+$font-family: 'Kode Mono', monospace; // Familia de tipografías
+$primary-color: #0C282B; // Color primario
+$secondary-color: #9E5327; // Color secundario
+$tertiary-color: #505050; // Color terciario
+$text-color-white: #FFFFFF; // Color de texto blanco
+$footer-color: #DE681D; // Color del pie de página
+$border-color: lightgray; // Color del borde
+$hover-brightness: 80%; // Brillo al pasar el ratón
+$tablet-width: 600px; // Ancho para tabletas
+$desktop-width: 1024px; // Ancho para escritorio
+
+// Seteos básicos generales
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: $base-font-size; // Pone el tamaño de tipografía base
+}
+
+body {
+    font-family: $font-family; // Pone la familia de tipografías
+}
+
+// Estilos de encabezado
+h1 {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: $primary-color;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: $secondary-color;
+    margin-bottom: 20px; 
+}
+
+h3 {
+    font-size: 1.2rem;
+    color: $tertiary-color;
+    text-shadow: 1px 1px 2px #000; 
+    margin-top: 20px; 
+}
+
+p {
+    font-size: 0.95rem;
+}
+
+// Estilo navegación
+nav {
+    background-color: $primary-color;
+
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style-type: none;
+        padding: 3px;
+        margin: 0;
+
+        li {
+            margin-right: 5px;
+            padding: 3px;
+
+            a {
+                text-decoration: none;
+                color: $text-color-white;
+                padding: 10px 15px;
+                display: block;
+            }
+        }
+    }
+}
+
+.centered-logo-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    color: $footer-color;
+}
+
+.service-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @media screen and (min-width: $tablet-width) {
+        flex-direction: row;
+    }
+
+    @media screen and (min-width: $desktop-width) {
+        flex-direction: row;
+
+        >div {
+            flex: 1;
+        }
+    }
+}
+
+.product {
+    border: 1px solid $border-color;
+    padding: 1rem;
+    text-align: center;
+
+    img {
+        width: 100%;
+        object-fit: cover;
+
+        &:hover {
+            filter: brightness($hover-brightness%);
+        }
+    }
+}
+
+.products-container {
+    display: grid;
+    margin: 1rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    @media screen and (min-width: $tablet-width) {
+        grid-template-columns: repeat(2, 1fr);
+
+        .img-siete {
+            display: block;
+            grid-column: span 2;
+        }
+    }
+
+    @media screen and (min-width: $desktop-width) {
+        grid-template-columns: repeat(2, 1fr);
+
+        .img-siete {
+            display: block;
+            grid-column: span 2;
+        }
+    }
+}
