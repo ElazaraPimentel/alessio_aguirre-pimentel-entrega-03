@@ -21,4 +21,4 @@ Ale tratemos de darle un ancho maximo a los contenedores para que no ocupen el 1
 Tambien en la seccion de productos podriamos achicar un poco mas las cards de los productos para no generar tanto scroll vertical y en caso de agregar mas productos quede bien.
 A seguir metiendole!
 Saludos.
-09/04 11:10
+09/04 11:10 
