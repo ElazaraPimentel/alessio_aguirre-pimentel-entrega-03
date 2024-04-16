@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Border Radius Example</title>
+    <style>
+        .box {
+            width: 400px;
+            height: 400px;
+            margin: 20px;
+            background-color: lightblue;
+            display: inline-block;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .one {
+            border-radius: 50px;
+        }
+
+        .two {
+            border-radius: 20px 150px;
+        }
+
+        .three {
+            border-radius: 50px 100px 150px;
+        }
+
+        .four {
+            border-radius: 50px 100px 150px 200px;
+        }
+
+        .percent {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box one">one</div>
+    <div class="box two">two</div>
+    <div class="box three">three</div>
+    <div class="box four">four</div>
+    <div class="box percent">five</div>
+</body>
+
+</html>

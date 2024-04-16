@@ -1,34 +1,52 @@
-/* style.scss */
+/*File name: style.scss*/
+/*Awante scss*/
 
-// Variables
-$base-font-size: 18px; // Tamaño de tipografía base
-$font-family: 'Kode Mono', monospace; // Familia de tipografías
-$primary-color: #0C282B; // Color primario
-$secondary-color: #9E5327; // Color secundario
-$tertiary-color: #505050; // Color terciario
-$text-color-white: #FFFFFF; // Color de texto blanco
-$footer-color: #DE681D; // Color del pie de página
-$border-color: lightgray; // Color del borde
-$hover-brightness: 80%; // Brillo al pasar el ratón
-$tablet-width: 600px; // Ancho para tabletas
-$desktop-width: 1024px; // Ancho para escritorio
 
-// Seteos básicos generales
+@import "utilities/variables";
+@import "utilities/mixins";
+@import "utilities/extend";
+
+
+
+.container-01 {
+    @include container;
+}
+
+.container-02 {
+    @include container(80%);
+}
+
+.container-03 {
+    @include container(80%, $tertiary-color);
+}
+
+
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    font-size: $base-font-size; // Pone el tamaño de tipografía base
 }
 
 body {
-    font-family: $font-family; // Pone la familia de tipografías
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: $font-family;
 }
 
-// Estilos de encabezado
+
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 h1 {
     font-weight: bold;
     font-size: 1.5rem;
@@ -39,18 +57,18 @@ h2 {
     font-size: 1.3rem;
     font-style: italic;
     color: $secondary-color;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
 }
 
 h3 {
     font-size: 1.2rem;
     color: $tertiary-color;
-    text-shadow: 1px 1px 2px #000; 
-    margin-top: 20px; 
+    text-shadow: 1px 1px 2px #000;
+    margin-top: 20px;
 }
 
 p {
-    font-size: 0.95rem;
+    font-size: 1rem;
 }
 
 // Estilo navegación
@@ -70,7 +88,6 @@ nav {
             padding: 3px;
 
             a {
-                text-decoration: none;
                 color: $text-color-white;
                 padding: 10px 15px;
                 display: block;
@@ -117,10 +134,27 @@ footer {
 
     img {
         width: 100%;
+        max-height: 400px;
+        object-fit: contain;
+
+        &:hover {
+            filter: brightness(#{$hover-brightness});
+        }
+    }
+}
+
+.product-01 {
+    border: 1px solid $border-color;
+    padding: 1rem;
+    text-align: center;
+
+    img {
+        width: 100%;
+        max-height: 500px;
         object-fit: cover;
 
         &:hover {
-            filter: brightness($hover-brightness%);
+            filter: brightness(#{$hover-brightness});
         }
     }
 }
@@ -146,6 +180,71 @@ footer {
         .img-siete {
             display: block;
             grid-column: span 2;
+        }
+    }
+}
+
+
+.user-contact-form {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    background-color: $box-background-color;
+    border: 1px solid $border-color;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: auto;
+
+    label {
+        font-size: 1rem;
+        color: $tertiary-color;
+        margin-bottom: 0.5rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+        width: 100%;
+        padding: 0.5rem;
+        margin-bottom: 1.2rem;
+        border: 1px solid $tertiary-color;
+        border-radius: 6px;
+        background-color: $text-color-white;
+        color: $primary-color;
+    }
+
+    .submit-button {
+        display: inline-block;
+        background-color: $primary-color;
+        color: $text-color-white;
+        text-align: center;
+        padding: 8px 10px;
+        text-decoration: none;
+        border-radius: 4px;
+        box-shadow: 8px 8px 8px $primary-color;
+
+
+        &:hover {
+            background-color: darken($primary-color, 10%);
+            filter: brightness($hover-brightness);
+        }
+    }
+
+    @media (min-width: $tablet-width) {
+        padding: 25px;
+        max-width: 600px;
+    }
+
+    @media (min-width: $desktop-width) {
+        padding: 30px;
+        max-width: 700px;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .submit-button {
+            width: auto;
+            padding: 12px 20px;
         }
     }
 }

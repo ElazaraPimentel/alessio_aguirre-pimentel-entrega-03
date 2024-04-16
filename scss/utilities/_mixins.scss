@@ -1,0 +1,12 @@
+//micins.scss
+
+@mixin container($percentage: 80%, $border-color: none) {
+    width: $percentage;
+
+    @if $border-color !=none {
+        border: 1px solid $border-color;
+        border-radius: if($percentage !=100%, 26px 115px, 0);
+    }
+
+    @extend %container-bootstrap-like
+}
