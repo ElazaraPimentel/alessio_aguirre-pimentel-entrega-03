@@ -5,7 +5,7 @@
 
     @if $border-color !=none {
         border: 1px solid $border-color;
-        border-radius: if($percentage !=100%, 26px 115px, 0);
+        border-radius: if($percentage !=100%, 26px 80px, 0);
     }
 
     @extend %container-bootstrap-like
